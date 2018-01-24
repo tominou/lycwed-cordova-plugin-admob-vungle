@@ -1,37 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<plugin id="lycwed-cordova-plugin-admob-vungle"
-  version="1.0.0" xmlns="http://apache.org/cordova/ns/plugins/1.0"
-  xmlns:android="http://schemas.android.com/apk/res/android">
+<plugin id="lycwed-cordova-plugin-admob-vungle" version="1.0.1"
+    xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
-  <name>lycwed-cordova-plugin-admob-vungle</name>
-  <description>Cordova AdMob Mediation Plugin for Vungle</description>
+    <name>lycwed-cordova-plugin-admob-vungle</name>
+    <description>Cordova AdMob Mediation Plugin for Vungle</description>
 
-  <engines>
-    <engine name="cordova" version=">=3" />
-  </engines>
+    <engines>
+        <engine name="cordova" version=">=3" />
+    </engines>
 
-  <platform name="android">
-    <config-file parent="/*" target="res/xml/config.xml"></config-file>
-    <config-file parent="/*" target="AndroidManifest.xml" /> 
-      
-    <source-file src="src/android/libs/adapter-rxjava-2.2.0.jar" target-dir="libs" />
-    <source-file src="src/android/libs/converter-gson-2.2.0.jar" target-dir="libs" />
-    <source-file src="src/android/libs/dagger-2.7.jar" target-dir="libs" />
-    <source-file src="src/android/libs/eventbus-2.2.1.jar" target-dir="libs" />
-    <source-file src="src/android/libs/gson-2.7.jar" target-dir="libs" />
-    <source-file src="src/android/libs/javax.inject-1.jar" target-dir="libs" />
-    <source-file src="src/android/libs/okhttp-3.6.0.jar" target-dir="libs" />
-    <source-file src="src/android/libs/okio-1.11.0.jar" target-dir="libs" />
-    <source-file src="src/android/libs/publisher-sdk-android-5.3.2.jar" target-dir="libs" />
-    <source-file src="src/android/libs/retrofit-2.2.0.jar" target-dir="libs" />
-    <source-file src="src/android/libs/rxjava-1.2.0.jar" target-dir="libs" />
+    <platform name="android">
+        <framework src="com.github.vungle:vungle-android-sdk:5.3.2" />
+    </platform>
 
-    <source-file src="src/android/vungle-5.3.2.0.aar" target-dir="libs" />
-  </platform>
-
-  <platform name="ios">
-    <config-file parent="/*" target="config.xml"></config-file>
-
-    <source-file src="src/ios/VungleSDK.framework" custom="true" />
-  </platform>
+    <platform name="ios">
+        <pods-config ios-min-version="9.0" use-frameworks="true" />
+        <pod id="GoogleMobileAdsMediationVungle" version="5.3.2.0" />
+    </platform>
 </plugin>
