@@ -1,3 +1,6 @@
+## [1.0.3]
+- Change SDK inclusion
+
 ## [1.0.2]
 - Re-add cordova-plugin-cocoapod-support and cordova-plugin-multidex
 

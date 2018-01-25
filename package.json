@@ -1,6 +1,6 @@
 {
   "name": "lycwed-cordova-plugin-admob-vungle",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Cordova AdMob Mediation Plugin for Vungle",
   "scripts": {
     "version": "sync-package-version --cordova-plugin"
