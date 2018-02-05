@@ -1,3 +1,6 @@
+## [1.0.6]
+- Fix bug with android adapter inclusion
+
 ## [1.0.5]
 - Add adapters
 
