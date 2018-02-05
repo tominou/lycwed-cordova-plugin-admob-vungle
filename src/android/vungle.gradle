@@ -3,3 +3,4 @@ dependencies {
         transitive=true
     }
     implementation 'com.google.ads.mediation:vungle:5.3.2.0'
+}

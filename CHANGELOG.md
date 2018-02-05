@@ -1,3 +1,6 @@
+## [1.0.4]
+- Fix bug on gradle
+
 ## [1.0.3]
 - Change SDK inclusion
 
