@@ -1,3 +1,6 @@
+## [1.0.5]
+- Add adapters
+
 ## [1.0.4]
 - Fix bug on gradle
 

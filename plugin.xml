@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<plugin id="lycwed-cordova-plugin-admob-vungle" version="1.0.4"
+<plugin id="lycwed-cordova-plugin-admob-vungle" version="1.0.5"
     xmlns="http://apache.org/cordova/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
@@ -11,7 +11,15 @@
     </engines>
 
     <platform name="android">
-        <framework src="src/android/vungle.gradle" type="gradleReference" custom="true" />
+        <framework src="com.google.ads.mediation:vungle:5.3.2.0:+" />
+        <framework src="com.google.android.gms:play-services-location:+" />
+
+        <framework src="src/android/Adapter/VungleAdapter.aar" target-dir="libs" />
+        <framework src="src/android/Adapter/dagger-2.7.jar" target-dir="libs" />
+        <framework src="src/android/Adapter/eventbus-2.2.1.jar" target-dir="libs" />
+        <framework src="src/android/Adapter/javax.inject-1.jar" target-dir="libs" />
+        <framework src="src/android/Adapter/rxjava-1.2.0.jar" target-dir="libs" />
+        <framework src="src/android/Adapter/vungle-publisher-adaptive-id-4.1.0.jar" target-dir="libs" />
 
         <!-- Prevents compilation error: https://developer.android.com/studio/build/multidex.html -->
         <!-- when add additional mediation plugins -->
@@ -21,6 +29,9 @@
     <platform name="ios">
         <pods-config ios-min-version="9.0" use-frameworks="true" />
         <pod id="GoogleMobileAdsMediationVungle" version="5.3.2.0" />
+
+        <header-file src="src/ios/Adapter/VungleAdNetworkExtras.h" />
+        <source-file src="src/ios/Adapter/libVungleAdapter.a" />
 
         <!-- Prevents compilation failures when using pod's id with additional mediations plugins -->
         <dependency id="cordova-plugin-cocoapod-support" />
