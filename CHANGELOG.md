@@ -1,3 +1,9 @@
+## [1.0.8]
+- Android issue: Replace implement by compile in gradle file
+
+## [1.0.7]
+- Create android and ios reduired files code
+
 ## [1.0.6]
 - Fix bug with android adapter inclusion
 
