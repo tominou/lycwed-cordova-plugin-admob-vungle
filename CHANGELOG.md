@@ -1,3 +1,6 @@
+## [1.0.11]
+- Fix bug with android Cordova plugin import
+
 ## [1.0.10]
 - Remove android config-file
 

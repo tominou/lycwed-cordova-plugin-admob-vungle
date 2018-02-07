@@ -1,6 +1,6 @@
 package com.lycwed.cordova.vungle;
 
-import org.apache.cordova.api.CordovaPlugin;
+import org.apache.cordova.CordovaPlugin;
 import com.vungle.mediation.VungleAdapter;
 import com.vungle.mediation.VungleExtrasBuilder;
 
