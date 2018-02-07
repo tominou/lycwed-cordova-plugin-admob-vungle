@@ -1,3 +1,6 @@
+## [1.0.9]
+- Remove android user permission WRITE_EXTERNAL_STORAGE
+
 ## [1.0.8]
 - Android issue: Replace implement by compile in gradle file
 
