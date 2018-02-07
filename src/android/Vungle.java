@@ -1,5 +1,10 @@
 package com.lycwed.cordova.vungle;
 
+import android.util.Log;
+import android.os.Bundle;
+
+import com.google.android.gms.ads.AdRequest;
+
 import org.apache.cordova.CordovaPlugin;
 import com.vungle.mediation.VungleAdapter;
 import com.vungle.mediation.VungleExtrasBuilder;

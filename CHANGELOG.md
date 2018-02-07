@@ -1,3 +1,6 @@
+## [1.0.12]
+- Fix bug with android imports
+
 ## [1.0.11]
 - Fix bug with android Cordova plugin import
 
