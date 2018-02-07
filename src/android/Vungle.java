@@ -16,12 +16,15 @@ public class Vungle extends CordovaPlugin {
     protected void pluginInitialize() {
         super.pluginInitialize();
 
-        String placementId = new String();
-        placementId = preferences.getString("VUNGLE_PLACEMENT_ID", "");
-        Log.v(LOG_TAG, placementId);
+        String rewardvideoId = new String();
+        String interstitialId = new String();
+        rewardvideoId = preferences.getString("REWARDVIDEO_ID", "");
+        interstitialId = preferences.getString("INTERSTITIAL_ID", "");
+        Log.v(LOG_TAG, rewardvideoId, interstitialId);
 
         String[] placements = new String[1];
-        placements[0] = placementId;
+        placements[0] = rewardvideoId;
+        placements[1] = interstitialId;
 
         Bundle extras = new VungleExtrasBuilder(placements).build();
         AdRequest request =  new AdRequest.Builder()

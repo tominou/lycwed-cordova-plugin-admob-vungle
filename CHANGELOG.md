@@ -1,3 +1,6 @@
+## [1.0.13]
+- Add installation variables to initialize Vungle
+
 ## [1.0.12]
 - Fix bug with android imports
 
