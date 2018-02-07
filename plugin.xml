@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<plugin id="lycwed-cordova-plugin-admob-vungle" version="1.0.6"
+<plugin id="lycwed-cordova-plugin-admob-vungle" version="1.0.7"
     xmlns="http://apache.org/cordova/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
@@ -11,15 +11,28 @@
     </engines>
 
     <platform name="android">
-        <framework src="com.google.ads.mediation:vungle:5.3.2.0:+" />
-        <framework src="com.google.android.gms:play-services-location:+" />
+        <config-file parent="/*" target="AndroidManifest.xml">
+            <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="18" />
+        </config-file>
 
-        <framework src="src/android/Adapter/VungleAdapter.aar" target-dir="libs" framework="true" />
-        <framework src="src/android/Adapter/dagger-2.7.jar" target-dir="libs" framework="true" />
-        <framework src="src/android/Adapter/eventbus-2.2.1.jar" target-dir="libs" framework="true" />
-        <framework src="src/android/Adapter/javax.inject-1.jar" target-dir="libs" framework="true" />
-        <framework src="src/android/Adapter/rxjava-1.2.0.jar" target-dir="libs" framework="true" />
-        <framework src="src/android/Adapter/vungle-publisher-adaptive-id-4.1.0.jar" target-dir="libs" framework="true" />
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+            <activity android:name="com.vungle.publisher.VideoFullScreenAdActivity"
+                android:configChanges="keyboardHidden|orientation|screenSize|screenLayout|smallestScreenSize"
+                android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
+
+            <activity android:name="com.vungle.publisher.MraidFullScreenAdActivity"
+                android:configChanges="keyboardHidden|orientation|screenSize|screenLayout|smallestScreenSize"
+                android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"/>
+
+            <activity android:name="com.vungle.publisher.FlexViewAdActivity"
+                android:configChanges="keyboardHidden|orientation|screenSize|screenLayout|smallestScreenSize"
+                android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"/>
+        </config-file>
+
+        <framework src="com.google.android.gms:play-services-location:+" />
+        <framework src="src/android/vungle.gradle" custom="true" type="gradleReference" />
+
+        <source-file src="src/android/Vungle.java" target-dir="src/com/lycwed/cordova" />
 
         <!-- Prevents compilation error: https://developer.android.com/studio/build/multidex.html -->
         <!-- when add additional mediation plugins -->
@@ -30,10 +43,14 @@
         <pods-config ios-min-version="9.0" use-frameworks="true" />
         <pod id="GoogleMobileAdsMediationVungle" version="5.3.2.0" />
 
-        <header-file src="src/ios/Adapter/VungleAdNetworkExtras.h" />
-        <source-file src="src/ios/Adapter/libVungleAdapter.a" framework="true" />
+        <header-file src="src/ios/Vungle.h" />
+        <source-file src="src/ios/Vungle.m" />
 
         <!-- Prevents compilation failures when using pod's id with additional mediations plugins -->
         <dependency id="cordova-plugin-cocoapod-support" />
     </platform>
+
+	<config-file parent="/*" target="config.xml">
+		<preference name="VUNGLE_PLACEMENT_ID" value="$PLACEMENT_ID"/>
+	</config-file>
 </plugin>
