@@ -1,3 +1,6 @@
+## [1.0.10]
+- Remove android config-file
+
 ## [1.0.9]
 - Remove android user permission WRITE_EXTERNAL_STORAGE
 
