@@ -1,3 +1,6 @@
+## [1.0.14]
+- Fix bug android on log string array
+
 ## [1.0.13]
 - Add installation variables to initialize Vungle
 
