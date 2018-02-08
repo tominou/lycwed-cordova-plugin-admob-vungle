@@ -1,5 +1,8 @@
+## [1.0.16]
+- Fix bug ios with header file
+
 ## [1.0.15]
-- Fix bug android on log string array
+- Fix bug android on import array utils
 
 ## [1.0.14]
 - Fix bug android on log string array

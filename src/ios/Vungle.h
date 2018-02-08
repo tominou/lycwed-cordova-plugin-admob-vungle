@@ -1,3 +1,3 @@
-#import <$Cordova/CDV.h>
+#import <Cordova/CDV.h>
 
 @interface VunglePlugin : CDVPlugin
