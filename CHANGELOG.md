@@ -1,3 +1,6 @@
+## [1.0.19]
+- Include VungleAdNetworkExtras.h file
+
 ## [1.0.18]
 - Fix bug ios
 
