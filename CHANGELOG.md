@@ -1,3 +1,6 @@
+## [1.0.21]
+- Fix bug on ios
+
 ## [1.0.20]
 - Remove VungleAdNetworkExtras.h, improve Vungle.m
 
