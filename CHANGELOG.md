@@ -1,5 +1,5 @@
 ## [1.0.19]
-- Include VungleAdNetworkExtras.h file
+- Include VungleAdNetworkExtras.h file in plugin.xml
 
 ## [1.0.18]
 - Fix bug ios
