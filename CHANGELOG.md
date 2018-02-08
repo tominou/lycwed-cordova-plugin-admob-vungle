@@ -1,3 +1,6 @@
+## [1.0.17]
+- Fix bug ios code
+
 ## [1.0.16]
 - Fix bug ios with header file
 
