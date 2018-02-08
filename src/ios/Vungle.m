@@ -1,11 +1,19 @@
 #import <Cordova/CDV.h>
 #import "Vungle.h"
-#import "VungleAdNetworkExtras.h"
 
 #import <VungleSDK/VungleSDK.h>
+#import <VungleAdapter/VungleAdapter.h>
+#import <VungleAdapter/VungleAdNetworkExtras.h>
 #import <GoogleMobileAds/GADExtras.h>
 
-#pragma mark Cordova JS bridge
+#import <GoogleMobileAds/GADInterstitial.h>
+#import <GoogleMobileAds/GADInterstitialDelegate.h>
+
+@interface VunglePlugin () <GADInterstitialDelegate>
+
+@property(nonatomic, strong) GADInterstitial *interstitial;
+
+@end
 
 @implementation VunglePlugin
 
@@ -22,19 +30,14 @@
         GADRequest *request = [GADRequest request];
         VungleAdNetworkExtras *extras = [[VungleAdNetworkExtras alloc] init];
 
-        NSMutableArray *placements = [[NSMutableArray alloc]initWithObjects:@"rewardvideoId", @"interstitialId", nil];
+        NSMutableArray *placements = [[NSMutableArray alloc] initWithObjects: rewardvideoId, interstitialId, nil];
         extras.allPlacements = placements;
         [request registerAdNetworkExtras:extras];
-        [_interstitial loadRequest:request];
 
-        // [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(finishLaunching:) name:UIApplicationDidFinishLaunchingNotification object:nil];
+        GADInterstitial *interstitial = [[GADInterstitial alloc] initWithAdUnitID: interstitialId];
+        interstitial.delegate = self;
+        [interstitial loadRequest:[GADRequest request]];
+
+        // [[GADRewardBasedVideoAd sharedInstance] loadRequest:[GADRequest request] withAdUnitID: rewardvideoId];
     }
 } @end
-
-// - (void)finishLaunching:(NSNotification *) notification
-// {
-//     [Vungle configureWithAppID:@"VUNGLE_APP_ID"
-//         zoneIDs:@[@"VUNGLE_PLACEMENT_ID"]
-//         options:options
-//         completion:nil];
-// }

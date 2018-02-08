@@ -1,3 +1,6 @@
+## [1.0.20]
+- Remove VungleAdNetworkExtras.h, improve Vungle.m
+
 ## [1.0.19]
 - Include VungleAdNetworkExtras.h file in plugin.xml
 
