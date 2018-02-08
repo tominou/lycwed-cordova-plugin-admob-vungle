@@ -1,5 +1,6 @@
 #import <Cordova/CDV.h>
 #import "Vungle.h"
+#import "VungleAdNetworkExtras.h"
 
 #import <VungleSDK/VungleSDK.h>
 #import <GoogleMobileAds/GADExtras.h>

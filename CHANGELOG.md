@@ -1,3 +1,6 @@
+## [1.0.18]
+- Fix bug ios
+
 ## [1.0.17]
 - Fix bug ios code
 
