@@ -1,6 +1,6 @@
 dependencies {
-    compile('com.vungle:publisher-sdk-android:5.3.2@aar') {
+    compile('com.vungle:publisher-sdk-android:6.3.24@aar') {
         transitive=true
     }
-    compile 'com.google.ads.mediation:vungle:5.3.2.0'
+    compile 'com.google.ads.mediation:vungle:6.3.24.1'
 }
