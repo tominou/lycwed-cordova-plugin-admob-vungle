@@ -35,7 +35,7 @@
 
   <platform name="ios">
     <pods-config ios-min-version="9.0" use-frameworks="true" />
-    <pod id="GoogleMobileAdsMediationVungle" version="6.3.24.0" />
+    <pod id="GoogleMobileAdsMediationVungle" version="6.3.2.1" />
 
     <header-file src="src/ios/Vungle.h" />
     <source-file src="src/ios/Vungle.m" />
